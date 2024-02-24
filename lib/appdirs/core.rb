@@ -11,5 +11,9 @@ module Appdirs
     def user_config_dir
       "#{Dir.home}/Library/Preferences/#{@app_name}"
     end
+
+    def user_cache_dir
+      "#{Dir.home}/Library/Caches/#{@app_name}"
+    end
   end
 end

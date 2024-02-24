@@ -17,4 +17,13 @@ RSpec.describe Appdirs::Core do
       expect(appdirs.user_config_dir).to eq(expected_path)
     end
   end
+
+  describe '#user_cache_dir' do
+    let(:expected_path) { "#{Dir.home}/Library/Caches/#{app_name}" }
+
+    it 'returns the correct user cache directory for macOS' do
+      appdirs = Appdirs::Core.new(app_name: app_name)
+      expect(appdirs.user_cache_dir).to eq(expected_path)
+    end
+  end
 end
