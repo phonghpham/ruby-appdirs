@@ -4,8 +4,8 @@ RSpec.describe Appdirs::Core do
     let(:expected_path) { "#{Dir.home}/Library/Application Support/#{app_name}" }
 
     it 'returns the correct user data directory for macOS' do
-      appdirs = Appdirs::Core.new(app_name: app_name)
-      expect(appdirs.user_data_dir).to eq(expected_path)
+      app_dirs = Appdirs::Core.new(app_name: app_name)
+      expect(app_dirs.user_data_dir).to eq(expected_path)
     end
   end
 
@@ -13,8 +13,8 @@ RSpec.describe Appdirs::Core do
     let(:expected_path) { "#{Dir.home}/Library/Preferences/#{app_name}" }
 
     it 'returns the correct user config directory for macOS' do
-      appdirs = Appdirs::Core.new(app_name: app_name)
-      expect(appdirs.user_config_dir).to eq(expected_path)
+      app_dirs = Appdirs::Core.new(app_name: app_name)
+      expect(app_dirs.user_config_dir).to eq(expected_path)
     end
   end
 
@@ -22,8 +22,17 @@ RSpec.describe Appdirs::Core do
     let(:expected_path) { "#{Dir.home}/Library/Caches/#{app_name}" }
 
     it 'returns the correct user cache directory for macOS' do
-      appdirs = Appdirs::Core.new(app_name: app_name)
-      expect(appdirs.user_cache_dir).to eq(expected_path)
+      app_dirs = Appdirs::Core.new(app_name: app_name)
+      expect(app_dirs.user_cache_dir).to eq(expected_path)
+    end
+  end
+
+  describe '#user_log_dir' do
+    let(:expected_path) { "#{Dir.home}/Library/Logs/#{app_name}" }
+
+    it 'returns the correct user log directory for macOS' do
+      app_dirs = Appdirs::Core.new(app_name: app_name)
+      expect(app_dirs.user_log_dir).to eq(expected_path)
     end
   end
 end

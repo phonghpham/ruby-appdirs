@@ -15,5 +15,9 @@ module Appdirs
     def user_cache_dir
       "#{Dir.home}/Library/Caches/#{@app_name}"
     end
+
+    def user_log_dir
+      "#{Dir.home}/Library/Logs/#{@app_name}"
+    end
   end
 end
