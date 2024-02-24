@@ -7,5 +7,9 @@ module Appdirs
     def user_data_dir
       "#{Dir.home}/Library/Application Support/#{@app_name}"
     end
+
+    def user_config_dir
+      "#{Dir.home}/Library/Preferences/#{@app_name}"
+    end
   end
 end
