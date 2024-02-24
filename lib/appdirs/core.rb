@@ -19,5 +19,13 @@ module Appdirs
     def user_log_dir
       "#{Dir.home}/Library/Logs/#{@app_name}"
     end
+
+    def site_data_dir
+      "/Library/Application Support/#{@app_name}"
+    end
+
+    def site_config_dir
+      "/Library/Preferences/#{@app_name}"
+    end
   end
 end
