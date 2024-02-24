@@ -1,3 +1,5 @@
+require 'rbconfig'
+
 module Appdirs
   class Core
     def initialize(app_name:)
@@ -26,6 +28,14 @@ module Appdirs
 
     def site_config_dir
       "/Library/Preferences/#{@app_name}"
+    end
+
+    def unsupported_platform_message
+      'Appdirs gem is currently only supported on macOS.' unless macos?
+    end
+
+    def macos?
+      RbConfig::CONFIG['host_os'] =~ /darwin|mac os/
     end
   end
 end

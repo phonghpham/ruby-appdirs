@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors = ["phonghpham"]
   spec.email = ["9318603+phonghpham@users.noreply.github.com"]
 
-  spec.summary = "A utility gem for finding application-specific directories according to OS"
+  spec.summary = "A utility gem for finding application-specific directories according to OS (currently only supporting MacOS)"
   spec.homepage = "https://github.com/phonghpham/ruby-appdirs"
   spec.required_ruby_version = ">= 3.0.0"
 

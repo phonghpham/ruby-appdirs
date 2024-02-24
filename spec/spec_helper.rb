@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# require '../lib/appdirs'
 require_relative '../lib/appdirs'
 
 
